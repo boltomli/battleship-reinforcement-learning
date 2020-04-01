@@ -1,6 +1,6 @@
 # coding: utf-8
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import numpy as np
 
 class Network():
@@ -15,6 +15,7 @@ class Network():
         self.type = tf.float32
 
         tf.reset_default_graph()
+        tf.disable_eager_execution()
         # Define the tensorflow neural network
         # 1. Input:
         self.input_dimensions = tf.placeholder(
